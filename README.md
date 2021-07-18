@@ -33,3 +33,23 @@
   2. 웹 클라이언트 만들기
 
 
+
+## 실행 방법
+
+1. 서버 실행
+```
+FLASK_ENV=development FLASK_APP=app.py flask run
+```
+
+2. Client 실행
+
+```
+# 이미지 클라이어트
+
+python3 image_client.py 
+
+# Message 클라이어튼
+
+python3 Message_client.py --message "보내고 싶은 메세지"
+```
+
