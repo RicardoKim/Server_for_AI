@@ -38,12 +38,15 @@
 
 1. 서버 실행
 ```
+cd server
 FLASK_ENV=development FLASK_APP=app.py flask run
 ```
 
 2. Client 실행
 
 ```
+cd client
+
 # 이미지 클라이어트
 
 python3 image_client.py 
@@ -52,4 +55,6 @@ python3 image_client.py
 
 python3 Message_client.py --message "보내고 싶은 메세지"
 ```
+
+
 
