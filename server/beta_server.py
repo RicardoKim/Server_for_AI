@@ -44,11 +44,12 @@ def predict():
 def home():
     return 'Hello World'
 
-@app.route('/test', methods=['POST'])
+@app.route('/test', methods=['POST', 'OPTIONS'])
 def test():
-    text = request.data
-    result = text.decode('utf-8')
-    print(result)
+    print("Test query")
+    text = request.get_data()
+    result = str(text.decode('utf-8'))
+    print(result.split("=")[-1])
     return result
         
 
