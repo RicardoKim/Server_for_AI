@@ -1,11 +1,14 @@
 import 'dart:convert';
-
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:image_picker/image_picker.dart';
 
 void main() {
   runApp(MyApp());
 }
+
+final ImagePicker _picker = ImagePicker();
 
 Future sending_message(String message) async{
   String url = "http://localhost:5000/test";
@@ -26,6 +29,14 @@ Future sending_message(String message) async{
   print("responseHeaders: $responseHeaders");
   print("responseBody: $responseBody");
 }
+
+Future _getImage() async{
+  PickedFile image = await _picker.getImage(source: ImageSource.gallery);
+  setState((){
+    _image = image;
+  })
+}
+
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -52,6 +63,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   TextEditingController inputController = TextEditingController();
+
+  late PickedFile _image;
   String inputText = 'default';
 
   @override
@@ -85,7 +98,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
           ],
         ),
+
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _getImage,
+        child: Icon(Icons.add_a_photo),
+      )
     );
   }
 }
