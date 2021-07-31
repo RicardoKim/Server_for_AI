@@ -9,6 +9,33 @@
 
 - 클라이언트 : <img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=Flutter&logoColor=white"/>
 
+## 실행 방법
+
+Server를 실행 시킨다.
+```
+cd server
+python test_sever.py
+```
+이후 http://127.0.0.1:5000/ 에 들어간다.
+
+들어가면 아래와 같은 화면이 나올 것이다.
+
+<img src="./image_source/server_entrance.png">
+
+이후 파일 선택 버튼 을 눌러 파일을 업로드 한다.
+
+이때 사용 가능한 파일 확장자는 다음과 같다.
+
+jpg, jpeg, gif
+
+파일을 선택하게 되면 다음과 같은 화면이 될것이다.
+
+<img src="./image_source/file_selected.png">
+
+이후 submit 버튼을 클릭하면 다음과 같은 결과가 나온다.
+
+<img src = "./image_source/success_image.png">
+
 
 ### 🤘Complete
 - Sever
@@ -29,8 +56,7 @@
 ### 💪 To do
 
 - Sever
-    1. 웹페이지 만들기
-    2. 로그인 기능  추가하기
+    1. 로그인 기능  추가하기
 - Client
   1. 앱 클라이언트 만들기
         - 사진 갤러리에서 가져오는 버튼 만들기
@@ -40,31 +66,7 @@
 
 
 
-## 실행 방법
 
-1. 서버 실행
-```
-cd server
-FLASK_ENV=development FLASK_APP=app.py flask run
-```
-
-2. Client 실행
-
-```
-cd client
-
-# 이미지 클라이어트
-
-python3 image_client.py 
-
-# Message 클라이어트
-
-python3 Message_client.py --message "보내고 싶은 메세지"
-
-# 웹 클라이어트를 가진 서버 실행하기
-
-python3 test_server.py
-```
 
 
 
