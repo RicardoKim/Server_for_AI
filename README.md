@@ -3,6 +3,8 @@
 
 ### 제작자 : 김진환
 
+### 개발 중....
+
 ### 사용 언어 및 툴
 
 - 서버 : <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white"/> <img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=Flask&logoColor=white"/>
