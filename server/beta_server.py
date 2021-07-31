@@ -1,10 +1,9 @@
 import io
 import json
-
 from torchvision import models
 import torchvision.transforms as transforms
 from PIL import Image
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 
 
 app = Flask(__name__) #시스템에서 경로를 설정하기 위한 위치를 알기위해 사용된다.
@@ -41,8 +40,8 @@ def predict():
         return jsonify({'class_id': class_id, 'class_name': class_name})
 
 @app.route('/')
-def home():
-    return 'Hello World'
+def upload_form():
+	return render_template('upload.html')
 
 @app.route('/test', methods=['POST', 'OPTIONS'])
 def test():

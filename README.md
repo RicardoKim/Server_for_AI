@@ -25,6 +25,7 @@
         - 이미지 전송 관련 client : Image_client.py
     - 앱 client 만들기
         - 서버와 통신 가능한 앱 만듬.
+    - 웹 client 만들기
 ### 💪 To do
 
 - Sever
@@ -35,7 +36,7 @@
         - 사진 갤러리에서 가져오는 버튼 만들기
         - 사진 전송하는 거 만들기
         - 결과 받아와서 화면에 출력하는거 만들기
-  2. 웹 클라이언트 만들기
+  
 
 
 
@@ -56,9 +57,12 @@ cd client
 
 python3 image_client.py 
 
-# Message 클라이어튼
+# Message 클라이어트
 
 python3 Message_client.py --message "보내고 싶은 메세지"
+
+# 웹 클라이어트를 가진 서버 실행하기
+python3 test_server.py
 ```
 
 
