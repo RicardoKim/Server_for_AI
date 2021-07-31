@@ -56,17 +56,21 @@ def upload_image():
 
     if file and allowed_file(file.filename):
         img_bytes = file.read()
-        # filename = secure_filename(file.filename)
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
-
+        
+        filename = secure_filename(file.filename)
+        # file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename), file.content_length)
+        with open(app.config['UPLOAD_FOLDER'] + filename, "wb") as f:
+            f.write(img_bytes)
+        f.close()
         _, class_name = get_prediction(image_bytes=img_bytes)
 
-        print('upload_image filename: ' + file.filename)
+        print('upload_image filename: ' + filename)
 
-        textstring = 'Image successfully uploaded and displayed below \n The AI model thinks this picture as ' + class_name
-        finalstring = textstring.replace('\n', '<br>')
-        flash(finalstring)
-        return render_template('upload.html', filename=file.filename)
+        textstring = 'Image successfully uploaded and displayed below '
+        prediction_string =  ' The AI model thinks this picture as ' + class_name
+        flash(textstring)
+        flash(prediction_string)
+        return render_template('upload.html', filename = filename)
     else:
         flash('Allowed image types are -> png, jpg, jpeg, gif')
         return redirect(request.url)
